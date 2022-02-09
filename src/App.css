@@ -1,11 +1,20 @@
 .App {
   padding: 20px;
   min-height: 100vh;
-  background-color: #282c34;
+  background-color: #4d4c7d;
   color: white;
 }
 
-.App-header {
-  text-align: center;
-  font-size: calc(10px + 2vmin);
+.card {
+  height: 100px;
+}
+
+.footer {
+  background-color: #363062;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 150px;
+  margin-bottom: 0px;
 }
