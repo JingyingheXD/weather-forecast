@@ -44,17 +44,16 @@ function Footer(props) {
   const weatherIcon = (weatherParameter) => {
     switch (weatherParameter) {
       case "Thunderstormh":
-        return <FontAwesomeIcon icon={faBolt} />;
+        return faBolt;
         break;
       case "Drizzle":
-        return <FontAwesomeIcon icon={faCloudRain} />;
+        return faCloudRain;
         break;
       case "Rain":
-        return <FontAwesomeIcon icon={faCloudShowersHeavy} />;
+        return faCloudShowersHeavy;
         break;
       case "Snow":
-        return <FontAwesomeIcon icon={faSnowflake} />;
-        break;
+        return faSnowflake;
       case "Mist":
       case "Smoke":
       case "Haze":
@@ -64,19 +63,18 @@ function Footer(props) {
       case "Ash":
       case "Squall":
       case "Tornado":
-        return <FontAwesomeIcon icon={faSmog} />;
+        return faSmog;
         break;
       case "Clouds":
-        return <FontAwesomeIcon icon={faCloud} />;
+        return faCloud;
         break;
       case "Clear":
-        return <FontAwesomeIcon icon={faSun} />;
+        return faSun;
     }
   };
-
   return (
     <div>
-      {weatherIcon(props.dailyWeather.weather[0].main)}
+      <FontAwesomeIcon icon={weatherIcon(props.dailyWeather.weather[0].main)} />
       <h2>{dateTime(props.dailyWeather.dt)}</h2>
     </div>
   );
