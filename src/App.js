@@ -22,8 +22,8 @@ function App() {
         <WeatherDetails />
       </div>
       <div className="footer">
-        {dailyWeathers.map((dailyWeather) => {
-          return <Footer dailyWeather={dailyWeather} />;
+        {dailyWeathers.slice(0, -1).map((dailyWeather) => {
+          return <Footer key={dailyWeather.dt} dailyWeather={dailyWeather} />;
         })}
       </div>
     </div>
@@ -31,6 +31,3 @@ function App() {
 }
 
 export default App;
-
-// <Footer weathers={dailyWeathers} />
-// <Footer weathers={dailyWeathers} />
