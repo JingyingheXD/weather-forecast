@@ -74,8 +74,11 @@ function Footer(props) {
   };
   return (
     <div>
-      <FontAwesomeIcon icon={weatherIcon(props.dailyWeather.weather[0].main)} />
-      <h2>{dateTime(props.dailyWeather.dt)}</h2>
+      <FontAwesomeIcon
+        icon={weatherIcon(props.dailyWeather.weather[0].main)}
+        className="footer-icons"
+      />
+      <p className="footer-dates">{dateTime(props.dailyWeather.dt)}</p>
     </div>
   );
 }

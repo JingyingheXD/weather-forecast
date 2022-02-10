@@ -23,3 +23,16 @@
   display: grid;
   grid-template-columns: 14.285% 14.285% 14.285% 14.285% 14.285% 14.285% 14.285%;
 }
+
+.footer-icons {
+  font-size: 3rem;
+  margin-top: 25%;
+  margin-bottom: 8%;
+}
+
+.footer-dates {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
