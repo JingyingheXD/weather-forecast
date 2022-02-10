@@ -11,12 +11,19 @@
 }
 
 .footer {
+  border-radius: 10px;
   background-color: #363062;
   position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  bottom: 5px;
+  left: 5px;
+  right: 5px;
   height: 20%;
   margin-bottom: 0px;
-  grid-template-columns: repeat(7, auto);
+  display: grid;
+  grid-template-columns: 14.285% 14.285% 14.285% 14.285% 14.285% 14.285% 14.285%;
 }
+
+/* .dailyWeather {
+  display: grid;
+  grid-template-columns: 14.285% 14.285% 14.285% 14.285% 14.285% 14.285% 14.285%;
+} */
