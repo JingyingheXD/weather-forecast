@@ -65,8 +65,10 @@ function Footer(props) {
       case "Squall":
       case "Tornado":
         return <FontAwesomeIcon icon={faSmog} />;
+        break;
       case "Clouds":
         return <FontAwesomeIcon icon={faCloud} />;
+        break;
       case "Clear":
         return <FontAwesomeIcon icon={faSun} />;
     }
