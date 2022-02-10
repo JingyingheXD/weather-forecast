@@ -2,7 +2,15 @@ import React from "react";
 
 function Footer(props) {
   const dateTime = (UnixTimeStamp) => {
+    let timeNow = new Date(Date.now());
     let a = new Date(UnixTimeStamp * 1000);
+
+    if (
+      timeNow.getDate() == a.getDate() &&
+      timeNow.getMonth() == timeNow.getMonth()
+    ) {
+      return "Today";
+    }
     var months = [
       "Jan",
       "Feb",
