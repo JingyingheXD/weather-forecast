@@ -1,4 +1,14 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCloud,
+  faBolt,
+  faCloudRain,
+  faCloudShowersHeavy,
+  faSnowflake,
+  faSmog,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Footer(props) {
   const dateTime = (UnixTimeStamp) => {
@@ -31,9 +41,40 @@ function Footer(props) {
     return time;
   };
 
+  const weatherIcon = (weatherParameter) => {
+    switch (weatherParameter) {
+      case "Thunderstormh":
+        return <FontAwesomeIcon icon={faBolt} />;
+        break;
+      case "Drizzle":
+        return <FontAwesomeIcon icon={faCloudRain} />;
+        break;
+      case "Rain":
+        return <FontAwesomeIcon icon={faCloudShowersHeavy} />;
+        break;
+      case "Snow":
+        return <FontAwesomeIcon icon={faSnowflake} />;
+        break;
+      case "Mist":
+      case "Smoke":
+      case "Haze":
+      case "Dust":
+      case "Fog":
+      case "Sand":
+      case "Ash":
+      case "Squall":
+      case "Tornado":
+        return <FontAwesomeIcon icon={faSmog} />;
+      case "Clouds":
+        return <FontAwesomeIcon icon={faCloud} />;
+      case "Clear":
+        return <FontAwesomeIcon icon={faSun} />;
+    }
+  };
+
   return (
     <div>
-      <h2>{props.dailyWeather.weather[0].main}</h2>
+      {weatherIcon(props.dailyWeather.weather[0].main)}
       <h2>{dateTime(props.dailyWeather.dt)}</h2>
     </div>
   );
