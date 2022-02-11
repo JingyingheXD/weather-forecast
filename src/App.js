@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 
 function App() {
   const [dailyWeathers, setDailyWeathers] = useState([]);
+  const [selectedWeather, setSelectedWeather] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -18,8 +19,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="card">
+      <div className="weather-details">
         <WeatherDetails />
+        <div>hello</div>
       </div>
       <div className="footer">
         {dailyWeathers.slice(0, -1).map((dailyWeather) => {
