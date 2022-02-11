@@ -1,5 +1,5 @@
 .App {
-  padding: 20px;
+  /* padding: 20px; */
   min-height: 100vh;
   background-color: #4d4c7d;
   color: white;
@@ -7,9 +7,13 @@
 
 .weather-details {
   display: grid;
-  height: 80%;
-  background-color: #4d4c7d;
+  position: fixed;
   grid-template-columns: 40% 60%;
+  height: 73%;
+  width: 100%;
+  padding-top: 3%;
+  padding-bottom: 5%;
+  background-color: #4d4c7d;
 }
 
 .footer {
@@ -37,4 +41,9 @@
   font-size: 1.2rem;
   margin-top: 10%;
   margin-bottom: 3%;
+}
+
+.c1 {
+  height: 100%;
+  border-right: 0.1px solid white;
 }

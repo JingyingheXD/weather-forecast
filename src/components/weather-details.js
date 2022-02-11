@@ -1,7 +1,7 @@
 import React from "react";
 
 function WeatherDetails(props) {
-  return <div>weather detail</div>;
+  return <div className="c1">weather detail</div>;
 }
 
 export default WeatherDetails;
