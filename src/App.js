@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import WeatherDetails from "./components/weather-details";
+import WeatherSummary from "./components/weather-summary";
 import Footer from "./components/footer";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <div className="weather-details">
-        <WeatherDetails />
+        <WeatherSummary />
         <div>hello</div>
       </div>
       <div className="footer">
