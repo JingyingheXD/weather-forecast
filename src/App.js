@@ -5,6 +5,7 @@ import Footer from "./components/footer";
 
 function App() {
   const [dailyWeathers, setDailyWeathers] = useState([]);
+  const [currentWeather, setCurrentWeather] = useState("");
   const [selectedWeather, setSelectedWeather] = useState(null);
 
   useEffect(() => {
@@ -13,14 +14,20 @@ function App() {
       { method: "GET" }
     )
       .then((resp) => resp.json())
-      .then((resp) => setDailyWeathers(resp.daily))
+      .then((resp) => {
+        setDailyWeathers(resp.daily);
+        setCurrentWeather(resp.current);
+      })
       .catch((error) => console.log(error));
   }, []);
 
   return (
     <div className="App">
       <div className="weather-details">
-        <WeatherSummary />
+        <WeatherSummary
+          dailyWeathers={dailyWeathers}
+          currentWeather={currentWeather}
+        />
         <div>hello</div>
       </div>
       <div className="footer">
