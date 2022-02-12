@@ -1,7 +1,7 @@
 .App {
-  /* padding: 20px; */
   min-height: 100vh;
-  background-color: #4d4c7d;
+  /* background-color: #4d4c7d; */
+  background-color: #394867;
   color: white;
 }
 
@@ -11,15 +11,17 @@
   grid-template-columns: 40% 60%;
   height: 73%;
   width: 100%;
-  padding-top: 3%;
-  padding-bottom: 5%;
-  background-color: #4d4c7d;
+  padding-top: 5%;
+  /* background-color: #4d4c7d;
+   */
+  background-color: #394867;
 }
 
 .footer {
   text-align: center;
   border-radius: 10px;
-  background-color: #363062;
+  /* background-color: #363062; */
+  background-color: #162447;
   position: fixed;
   bottom: 2px;
   left: 2px;
@@ -32,7 +34,7 @@
 
 .footer-icons {
   font-size: 3rem;
-  margin-top: 15%;
+  margin-top: 16%;
   margin-bottom: 5%;
 }
 
@@ -49,30 +51,28 @@
 }
 
 .weather-sum-degree {
-  margin-top: 15%;
+  margin-top: 12%;
   text-align: center;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
-  font-size: 500%;
-  margin-left: 15%;
+  font-size: 550%;
+  margin-left: 10%;
 }
 
 .weather-sum-description {
-  margin-top: 8%;
+  margin-top: 3%;
   text-align: center;
   font-size: 180%;
   font-family: sans-serif;
 }
 
 .weather-sum-Low-High {
-  margin-top: 3%;
+  margin-top: 2%;
   text-align: center;
   font-size: 150%;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .weather-sum-button {
-  margin-top: 10%;
-  margin-left: 25%;
-  text-align: center;
+  margin-top: 5%;
 }

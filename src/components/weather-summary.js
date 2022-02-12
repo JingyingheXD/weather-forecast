@@ -19,10 +19,18 @@ function WeatherSummary(props) {
         <div className="weather-sum-Low-High">
           L: {lowTemp}&deg; H: {HighTemp}&deg;
         </div>
-        <button className="weather-sum-button">Show Hourly tempreture</button>
+        <div className="weather-sum-button">
+          <div className="d-flex justify-content-center">
+            <button type="button" class="btn btn-secondary">
+              Show Hourly tempreture
+            </button>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
 export default WeatherSummary;
+
+// <button className="weather-sum-button">Show Hourly tempreture</button>;
