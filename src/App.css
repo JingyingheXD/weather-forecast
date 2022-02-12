@@ -47,3 +47,33 @@
   height: 100%;
   border-right: 0.1px solid white;
 }
+
+.weather-sum-degree {
+  margin-top: 15%;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 500%;
+}
+
+.weather-sum-description {
+  margin-top: 8%;
+  text-align: center;
+  margin-right: 15%;
+  font-size: 180%;
+  font-family: sans-serif;
+}
+
+.weather-sum-Low-High {
+  margin-top: 3%;
+  text-align: center;
+  margin-right: 13%;
+  font-size: 150%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.weather-sum-button {
+  margin-top: 10%;
+  margin-left: 15%;
+  text-align: center;
+}

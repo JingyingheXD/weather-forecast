@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 
 function App() {
   const [dailyWeathers, setDailyWeathers] = useState([]);
-  const [currentWeather, setCurrentWeather] = useState("");
+  const [currentWeather, setCurrentWeather] = useState(null);
   const [selectedWeather, setSelectedWeather] = useState(null);
 
   useEffect(() => {
