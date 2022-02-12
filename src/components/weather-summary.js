@@ -5,7 +5,7 @@ function WeatherSummary(props) {
   const dailyWeathers = props.dailyWeathers;
 
   if (currentWeather == null) {
-    return <div>The current weather is loading...</div>;
+    return <div>The weather is loading...</div>;
   } else {
     let tempCelsius = Math.round(props.currentWeather.temp - 273.15);
     let lowTemp = Math.round(dailyWeathers[0].temp.min - 273.15);
@@ -22,7 +22,7 @@ function WeatherSummary(props) {
         <div className="weather-sum-button">
           <div className="d-flex justify-content-center">
             <button type="button" class="btn btn-secondary">
-              Show Hourly tempreture
+              Hourly tempreture
             </button>
           </div>
         </div>
@@ -32,5 +32,3 @@ function WeatherSummary(props) {
 }
 
 export default WeatherSummary;
-
-// <button className="weather-sum-button">Show Hourly tempreture</button>;
