@@ -19,13 +19,15 @@ function WeatherSummary(props) {
         <div className="weather-sum-Low-High">
           L: {celsiusTemp(weather.min)}&deg; H: {celsiusTemp(weather.max)}&deg;
         </div>
-        <div className="weather-sum-button">
-          <div className="d-flex justify-content-center">
-            <button type="button" className="btn btn-secondary">
-              Hourly tempreture
-            </button>
+        {weather.current ? (
+          <div className="weather-sum-button">
+            <div className="d-flex justify-content-center">
+              <button type="button" className="btn btn-secondary">
+                Hourly tempreture
+              </button>
+            </div>
           </div>
-        </div>
+        ) : null}
       </div>
     );
   } else {
