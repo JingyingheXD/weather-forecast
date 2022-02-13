@@ -1,6 +1,6 @@
 import React from "react";
 import ConvertUnixTime from "../utils/convert-unix-time";
-import GetWeatherIcon from "../utils/get-selected-weather-summary";
+import GetWeatherIcon from "../utils/get-weather-icon";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

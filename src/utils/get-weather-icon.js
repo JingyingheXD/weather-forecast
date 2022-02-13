@@ -6,6 +6,7 @@ import {
   faSnowflake,
   faSmog,
   faSun,
+  faFaceGrinWide,
 } from "@fortawesome/free-solid-svg-icons";
 
 function GetWeatherIcon(weatherParameter) {
@@ -33,6 +34,8 @@ function GetWeatherIcon(weatherParameter) {
         return faCloud;
       case "Clear":
         return faSun;
+      default:
+        return faFaceGrinWide;
     }
   };
 
