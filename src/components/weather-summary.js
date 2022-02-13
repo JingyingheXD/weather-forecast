@@ -25,7 +25,7 @@ function WeatherSummary(props) {
         </div>
         <div className="weather-sum-button">
           <div className="d-flex justify-content-center">
-            <button type="button" class="btn btn-secondary">
+            <button type="button" className="btn btn-secondary">
               Hourly tempreture
             </button>
           </div>

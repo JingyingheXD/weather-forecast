@@ -47,13 +47,10 @@ function Footer(props) {
     switch (weatherParameter) {
       case "Thunderstormh":
         return faBolt;
-        break;
       case "Drizzle":
         return faCloudRain;
-        break;
       case "Rain":
         return faCloudShowersHeavy;
-        break;
       case "Snow":
         return faSnowflake;
       case "Mist":
@@ -66,13 +63,15 @@ function Footer(props) {
       case "Squall":
       case "Tornado":
         return faSmog;
-        break;
       case "Clouds":
         return faCloud;
-        break;
       case "Clear":
         return faSun;
     }
+  };
+
+  const dailyWeatherClicked = (dailyWeather) => {
+    props.dailyWeatherClicked(dailyWeather);
   };
 
   return (
@@ -80,12 +79,15 @@ function Footer(props) {
       {dailyWeathers &&
         dailyWeathers.map((dailyWeather) => {
           return (
-            <div key={dailyWeather.dt}>
+            <div
+              key={dailyWeather.dt}
+              onClick={(evt) => dailyWeatherClicked(dailyWeather)}
+            >
               <FontAwesomeIcon
                 icon={weatherIcon(dailyWeather.weather[0].main)}
                 className="footer-icons"
               />
-              <p className="footer-dates">{dateTime(dailyWeather.dt)}</p>
+              <p className="footer-dates">{dateTime(dailyWeather.dt)} </p>
             </div>
           );
         })}

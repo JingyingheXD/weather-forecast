@@ -21,6 +21,10 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  const dailyWeatherClicked = (dailyWeather) => {
+    setSelectedWeather(dailyWeather);
+  };
+
   return (
     <div className="App">
       <div className="weather-details">
@@ -30,7 +34,10 @@ function App() {
         />
         <div>hello</div>
       </div>
-      <Footer dailyWeathers={dailyWeathers.slice(0, -1)} />
+      <Footer
+        dailyWeatherClicked={dailyWeatherClicked}
+        dailyWeathers={dailyWeathers.slice(0, -1)}
+      />
     </div>
   );
 }
