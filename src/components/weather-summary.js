@@ -17,7 +17,7 @@ function WeatherSummary(props) {
           {celsiusTemp(currentWeather.temp)}&deg;
         </div>
         <div className="weather-sum-description">
-          {props.currentWeather.weather[0].description}
+          {currentWeather.weather[0].description}
         </div>
         <div className="weather-sum-Low-High">
           L: {celsiusTemp(dailyWeathers[0].temp.min)}&deg; H:{" "}
