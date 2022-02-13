@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Footer(props) {
+  const dailyWeathers = props.dailyWeathers;
+
   const dateTime = (UnixTimeStamp) => {
     let timeNow = new Date(Date.now());
     let a = new Date(UnixTimeStamp * 1000);
@@ -72,13 +74,21 @@ function Footer(props) {
         return faSun;
     }
   };
+
   return (
-    <div>
-      <FontAwesomeIcon
-        icon={weatherIcon(props.dailyWeather.weather[0].main)}
-        className="footer-icons"
-      />
-      <p className="footer-dates">{dateTime(props.dailyWeather.dt)}</p>
+    <div className="footer">
+      {dailyWeathers &&
+        dailyWeathers.map((dailyWeather) => {
+          return (
+            <div key={dailyWeather.dt}>
+              <FontAwesomeIcon
+                icon={weatherIcon(dailyWeather.weather[0].main)}
+                className="footer-icons"
+              />
+              <p className="footer-dates">{dateTime(dailyWeather.dt)}</p>
+            </div>
+          );
+        })}
     </div>
   );
 }

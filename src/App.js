@@ -30,11 +30,7 @@ function App() {
         />
         <div>hello</div>
       </div>
-      <div className="footer">
-        {dailyWeathers.slice(0, -1).map((dailyWeather) => {
-          return <Footer key={dailyWeather.dt} dailyWeather={dailyWeather} />;
-        })}
-      </div>
+      <Footer dailyWeathers={dailyWeathers.slice(0, -1)} />
     </div>
   );
 }
