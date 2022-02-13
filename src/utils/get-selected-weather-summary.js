@@ -22,14 +22,12 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["description"] = currentWeather.weather[0].description;
       displayWeather["min"] = selectedWeather.temp.min;
       displayWeather["max"] = selectedWeather.temp.max;
-      displayWeather["current"] = 1;
     } else {
       displayWeather["dt"] = selectedWeather.dt;
       displayWeather["temp"] = selectedWeather.temp.day;
       displayWeather["description"] = selectedWeather.weather[0].description;
       displayWeather["min"] = selectedWeather.temp.min;
       displayWeather["max"] = selectedWeather.temp.max;
-      displayWeather["current"] = 0;
     }
 
     return displayWeather;
