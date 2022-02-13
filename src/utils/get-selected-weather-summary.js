@@ -23,6 +23,7 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["min"] = selectedWeather.temp.min;
       displayWeather["max"] = selectedWeather.temp.max;
       displayWeather["current"] = 1;
+      displayWeather["weatherParameter"] = currentWeather.weather[0].main;
     } else {
       displayWeather["dt"] = selectedWeather.dt;
       displayWeather["temp"] = selectedWeather.temp.day;
@@ -30,6 +31,7 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["min"] = selectedWeather.temp.min;
       displayWeather["max"] = selectedWeather.temp.max;
       displayWeather["current"] = 0;
+      displayWeather["weatherParameter"] = selectedWeather.weather[0].main;
     }
 
     return displayWeather;

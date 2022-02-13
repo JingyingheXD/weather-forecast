@@ -31,7 +31,7 @@ function WeatherSummary(props) {
       </div>
     );
   } else {
-    return <div>The weather is loading...</div>;
+    return <div>The weather summary is loading...</div>;
   }
 }
 
