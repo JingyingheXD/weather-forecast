@@ -31,6 +31,7 @@ function App() {
         <WeatherSummary
           dailyWeathers={dailyWeathers}
           currentWeather={currentWeather}
+          selectedWeather={selectedWeather}
         />
         <div>hello</div>
       </div>

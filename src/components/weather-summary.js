@@ -1,15 +1,38 @@
 import React from "react";
 
 function WeatherSummary(props) {
-  const currentWeather = props.currentWeather;
   const dailyWeathers = props.dailyWeathers;
+  const currentWeather = props.currentWeather;
+  const selectedWeather = props.selectedWeather;
+
+  let selectedIsTodayFlag = 0;
+
+  const selectedIsToday = (selectedWeather, currentWeather) => {
+    let select = new Date(selectedWeather.dt * 1000);
+    let current = new Date(currentWeather.dt * 1000);
+    if (
+      select.getDate() == current.getDate() &&
+      select.getMonth() == current.getMonth()
+    ) {
+      selectedIsTodayFlag = 1;
+      return currentWeather;
+    } else {
+      return selectedWeather;
+    }
+  };
+
+  let displayWeather = selectedIsToday(selectedWeather, currentWeather);
 
   const celsiusTemp = (tempKelvin) => {
-    var tempCelsius = 0;
+    let tempCelsius = 0;
     tempCelsius = Math.round(tempKelvin - 273.15);
     return tempCelsius;
   };
 
+
+
+
+  
   return (
     currentWeather && (
       <div className="weather-sum">
