@@ -36,6 +36,7 @@
   font-size: 3rem;
   margin-top: 16%;
   margin-bottom: 5%;
+  cursor: pointer;
 }
 
 .footer-dates {
@@ -43,6 +44,7 @@
   font-size: 1.2rem;
   margin-top: 10%;
   margin-bottom: 3%;
+  cursor: pointer;
 }
 
 .weather-sum {
