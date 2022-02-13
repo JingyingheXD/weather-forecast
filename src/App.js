@@ -8,7 +8,7 @@ import Footer from "./components/footer";
 function App() {
   const [dailyWeathers, setDailyWeathers] = useState([]);
   const [currentWeather, setCurrentWeather] = useState(null);
-  const [selectedWeather, setSelectedWeather] = useState(null);
+  const [displayWeather, setDisplayWeather] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -19,17 +19,17 @@ function App() {
       .then((resp) => {
         setDailyWeathers(resp.daily);
         setCurrentWeather(resp.current);
+        setDisplayWeather(
+          GetSelectedWeatherSummary(resp.daily[0], resp.current)
+        );
       })
+      .then()
       .catch((error) => console.log(error));
   }, []);
 
-  let displayWeather = GetSelectedWeatherSummary(
-    selectedWeather,
-    currentWeather
-  );
-
-  const dailyWeatherClicked = (dailyWeather) => {
-    setSelectedWeather(dailyWeather);
+  const dailyWeatherClicked = (selectedWeather) => {
+    const summary = GetSelectedWeatherSummary(selectedWeather, currentWeather);
+    setDisplayWeather(summary);
   };
 
   return (

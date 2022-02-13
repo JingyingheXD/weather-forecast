@@ -70,8 +70,8 @@ function Footer(props) {
     }
   };
 
-  const dailyWeatherClicked = (dailyWeather) => {
-    props.dailyWeatherClicked(dailyWeather);
+  const dailyWeatherClicked = (selectedWeather) => {
+    props.dailyWeatherClicked(selectedWeather);
   };
 
   return (
