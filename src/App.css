@@ -5,9 +5,10 @@
   color: white;
 }
 
-.weather-details {
-  display: grid;
+.body {
   position: fixed;
+  display: grid;
+  /* grid-gap: 2%; */
   grid-template-columns: 40% 60%;
   height: 73%;
   width: 100%;
@@ -78,4 +79,21 @@
 
 .weather-sum-button {
   margin-top: 5%;
+}
+
+.weather-details {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.weather-details-header {
+  text-align: center;
+  font-size: 180%;
+  font-family: sans-serif;
+  text-transform: capitalize;
+}
+
+.weather-details-body {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }

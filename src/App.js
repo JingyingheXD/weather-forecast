@@ -3,6 +3,7 @@ import "./App.css";
 import GetSelectedWeatherSummary from "./utils/get-selected-weather-summary";
 
 import WeatherSummary from "./components/weather-summary";
+import WeatherDetails from "./components/weather-details";
 import Footer from "./components/footer";
 
 function App() {
@@ -34,9 +35,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="weather-details">
+      <div className="body">
         <WeatherSummary displayWeather={displayWeather} />
-        <div>hello</div>
+        <WeatherDetails displayWeather={displayWeather} />
       </div>
       <Footer
         dailyWeatherClicked={dailyWeatherClicked}

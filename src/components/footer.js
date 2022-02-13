@@ -1,4 +1,5 @@
 import React from "react";
+import ConvertUnixTime from "../utils/convert-unix-time";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloud,
@@ -12,36 +13,6 @@ import {
 
 function Footer(props) {
   const dailyWeathers = props.dailyWeathers;
-
-  const dateTime = (UnixTimeStamp) => {
-    let timeNow = new Date(Date.now());
-    let a = new Date(UnixTimeStamp * 1000);
-
-    if (
-      timeNow.getDate() == a.getDate() &&
-      timeNow.getMonth() == timeNow.getMonth()
-    ) {
-      return "Today";
-    }
-    var months = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var time = date + " " + month;
-    return time;
-  };
 
   const weatherIcon = (weatherParameter) => {
     switch (weatherParameter) {
@@ -87,7 +58,9 @@ function Footer(props) {
                 icon={weatherIcon(dailyWeather.weather[0].main)}
                 className="footer-icons"
               />
-              <p className="footer-dates">{dateTime(dailyWeather.dt)} </p>
+              <p className="footer-dates">
+                {ConvertUnixTime(dailyWeather.dt)}{" "}
+              </p>
             </div>
           );
         })}
