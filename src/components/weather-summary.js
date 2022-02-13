@@ -5,7 +5,7 @@ function WeatherSummary(props) {
   const dailyWeathers = props.dailyWeathers;
 
   const celsiusTemp = (tempKelvin) => {
-    var tempCelsius;
+    var tempCelsius = 0;
     tempCelsius = Math.round(tempKelvin - 273.15);
     return tempCelsius;
   };
