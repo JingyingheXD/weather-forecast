@@ -5,6 +5,9 @@ function WeatherDetails(props) {
 
   return (
     <div className="weather-details">
+      {weather && (
+        <header className="weather-details-header">{weather.dt}</header>
+      )}
       <div>Sunny</div>
       <div className="weather-details-body">
         <div>hello</div>
@@ -17,4 +20,3 @@ function WeatherDetails(props) {
 }
 
 export default WeatherDetails;
-// <header className="weather-details-header">{weather.dt}</header>
