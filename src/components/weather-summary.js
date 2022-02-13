@@ -35,10 +35,4 @@ function WeatherSummary(props) {
   );
 }
 
-function ConvertKelvinToCelsius(tempKelvin) {
-  var tempCelsius;
-  tempCelsius = Math.round(tempKelvin - 273.15);
-  return tempCelsius;
-}
-
 export default WeatherSummary;
