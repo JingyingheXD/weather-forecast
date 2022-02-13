@@ -1,50 +1,23 @@
 import React from "react";
 
 function WeatherSummary(props) {
-  const dailyWeathers = props.dailyWeathers;
-  const currentWeather = props.currentWeather;
-  const selectedWeather = props.selectedWeather;
+  const weather = props.displayWeather;
 
-  let selectedIsTodayFlag = 0;
+  if (weather) {
+    const celsiusTemp = (tempKelvin) => {
+      let tempCelsius = 0;
+      tempCelsius = Math.round(tempKelvin - 273.15);
+      return tempCelsius;
+    };
 
-  const selectedIsToday = (selectedWeather, currentWeather) => {
-    let select = new Date(selectedWeather.dt * 1000);
-    let current = new Date(currentWeather.dt * 1000);
-    if (
-      select.getDate() == current.getDate() &&
-      select.getMonth() == current.getMonth()
-    ) {
-      selectedIsTodayFlag = 1;
-      return currentWeather;
-    } else {
-      return selectedWeather;
-    }
-  };
-
-  let displayWeather = selectedIsToday(selectedWeather, currentWeather);
-
-  const celsiusTemp = (tempKelvin) => {
-    let tempCelsius = 0;
-    tempCelsius = Math.round(tempKelvin - 273.15);
-    return tempCelsius;
-  };
-
-
-
-
-  
-  return (
-    currentWeather && (
+    return (
       <div className="weather-sum">
         <div className="weather-sum-degree">
-          {celsiusTemp(currentWeather.temp)}&deg;
+          {celsiusTemp(weather.temp)}&deg;
         </div>
-        <div className="weather-sum-description">
-          {currentWeather.weather[0].description}
-        </div>
+        <div className="weather-sum-description">{weather.description}</div>
         <div className="weather-sum-Low-High">
-          L: {celsiusTemp(dailyWeathers[0].temp.min)}&deg; H:{" "}
-          {celsiusTemp(dailyWeathers[0].temp.max)}&deg;
+          L: {celsiusTemp(weather.min)}&deg; H: {celsiusTemp(weather.max)}&deg;
         </div>
         <div className="weather-sum-button">
           <div className="d-flex justify-content-center">
@@ -54,8 +27,10 @@ function WeatherSummary(props) {
           </div>
         </div>
       </div>
-    )
-  );
+    );
+  } else {
+    return <div>The weather is loading...</div>;
+  }
 }
 
 export default WeatherSummary;

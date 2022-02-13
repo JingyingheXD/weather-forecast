@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import GetSelectedWeatherSummary from "./utils/get-selected-weather-summary";
+
 import WeatherSummary from "./components/weather-summary";
 import Footer from "./components/footer";
 
@@ -21,6 +23,11 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
+  let displayWeather = GetSelectedWeatherSummary(
+    selectedWeather,
+    currentWeather
+  );
+
   const dailyWeatherClicked = (dailyWeather) => {
     setSelectedWeather(dailyWeather);
   };
@@ -28,11 +35,7 @@ function App() {
   return (
     <div className="App">
       <div className="weather-details">
-        <WeatherSummary
-          dailyWeathers={dailyWeathers}
-          currentWeather={currentWeather}
-          selectedWeather={selectedWeather}
-        />
+        <WeatherSummary displayWeather={displayWeather} />
         <div>hello</div>
       </div>
       <Footer
