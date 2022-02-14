@@ -1,23 +1,19 @@
 import React from "react";
+import ConvertKelvinToCelsius from "../utils/convert-kelvin-to-celsius";
 
 function WeatherSummary(props) {
   const weather = props.displayWeather;
 
   if (weather) {
-    const celsiusTemp = (tempKelvin) => {
-      let tempCelsius = 0;
-      tempCelsius = Math.round(tempKelvin - 273.15);
-      return tempCelsius;
-    };
-
     return (
       <div className="weather-sum">
         <div className="weather-sum-degree">
-          {celsiusTemp(weather.temp)}&deg;
+          {ConvertKelvinToCelsius(weather.temp)}&deg;
         </div>
         <div className="weather-sum-description">{weather.description}</div>
         <div className="weather-sum-Low-High">
-          L: {celsiusTemp(weather.min)}&deg; H: {celsiusTemp(weather.max)}&deg;
+          L: {ConvertKelvinToCelsius(weather.min)}&deg; H:{" "}
+          {ConvertKelvinToCelsius(weather.max)}&deg;
         </div>
         {weather.current ? (
           <div className="weather-sum-button">

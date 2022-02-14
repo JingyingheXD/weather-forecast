@@ -24,6 +24,13 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["max"] = selectedWeather.temp.max;
       displayWeather["current"] = 1;
       displayWeather["weatherParameter"] = currentWeather.weather[0].main;
+      displayWeather["feels_like"] = currentWeather.feels_like;
+      displayWeather["sunrise"] = currentWeather.sunrise;
+      displayWeather["sunset"] = currentWeather.sunset;
+      displayWeather["humidity"] = currentWeather.humidity;
+      displayWeather["uvi"] = currentWeather.uvi;
+      displayWeather["wind_speed"] = currentWeather.wind_speed;
+      displayWeather["pressure"] = currentWeather.pressure;
     } else {
       displayWeather["dt"] = selectedWeather.dt;
       displayWeather["temp"] = selectedWeather.temp.day;
@@ -32,6 +39,13 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["max"] = selectedWeather.temp.max;
       displayWeather["current"] = 0;
       displayWeather["weatherParameter"] = selectedWeather.weather[0].main;
+      displayWeather["feels_like"] = selectedWeather.feels_like.day;
+      displayWeather["sunrise"] = selectedWeather.sunrise;
+      displayWeather["sunset"] = selectedWeather.sunset;
+      displayWeather["humidity"] = selectedWeather.humidity;
+      displayWeather["uvi"] = selectedWeather.uvi;
+      displayWeather["wind_speed"] = selectedWeather.wind_speed;
+      displayWeather["pressure"] = selectedWeather.pressure;
     }
 
     return displayWeather;

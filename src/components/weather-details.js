@@ -1,6 +1,7 @@
 import React from "react";
 import ConvertUnixTime from "../utils/convert-unix-time";
 import GetWeatherIcon from "../utils/get-weather-icon";
+import ConvertKelvinToCelsius from "../utils/convert-kelvin-to-celsius";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -19,7 +20,9 @@ function WeatherDetails(props) {
             className="weather-details-icon"
             icon={GetWeatherIcon(weather.weatherParameter)}
           />
-          <div>hello</div>
+          <div>
+            <p>{weather.feels_like}</p>
+          </div>
           <div>hello</div>
           <div>hello</div>
           <div>hello</div>
