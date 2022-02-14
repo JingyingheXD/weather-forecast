@@ -21,7 +21,9 @@ function WeatherDetails(props) {
             icon={GetWeatherIcon(weather.weatherParameter)}
           />
           <div>
-            <p>{weather.feels_like}</p>
+            <p>FEELS LIKE: {ConvertKelvinToCelsius(weather.feels_like)}&deg;</p>
+            <p>SUNRISE: {ConvertUnixTime(weather.sunrise)}</p>
+            <p>SUNSET: {ConvertUnixTime(weather.sunset)}</p>
           </div>
           <div>hello</div>
           <div>hello</div>
