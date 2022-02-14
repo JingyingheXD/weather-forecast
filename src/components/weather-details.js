@@ -13,8 +13,13 @@ function WeatherDetails(props) {
         <header className="weather-details-header">
           {ConvertUnixTime(weather.dt)}
         </header>
-        <FontAwesomeIcon icon={GetWeatherIcon(weather.weatherParameter)} />
+
         <div className="weather-details-body">
+          <FontAwesomeIcon
+            className="weather-details-icon"
+            icon={GetWeatherIcon(weather.weatherParameter)}
+          />
+          <div>hello</div>
           <div>hello</div>
           <div>hello</div>
           <div>hello</div>

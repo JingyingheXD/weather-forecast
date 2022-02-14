@@ -96,4 +96,12 @@
 .weather-details-body {
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30% 30%;
+  height: 100%;
+}
+
+.weather-details-icon {
+  font-size: 500%;
+  justify-self: center;
+  align-self: center;
 }
