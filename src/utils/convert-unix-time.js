@@ -1,15 +1,9 @@
-function ConvertUnixTime(UnixTimeStamp) {
-  const dateTime = (UnixTimeStamp) => {
+function ConvertUnixTime(UnixTimeStamp, displayTime) {
+  const dateTime = (UnixTimeStamp, displayTime) => {
     let timeNow = new Date(Date.now());
     let a = new Date(UnixTimeStamp * 1000);
 
-    if (
-      timeNow.getDate() == a.getDate() &&
-      timeNow.getMonth() == timeNow.getMonth()
-    ) {
-      return "Today";
-    }
-    var months = [
+    let months = [
       "Jan",
       "Feb",
       "Mar",
@@ -23,13 +17,29 @@ function ConvertUnixTime(UnixTimeStamp) {
       "Nov",
       "Dec",
     ];
-    var month = months[a.getMonth()];
-    var date = a.getDate();
-    var time = date + " " + month;
-    return time;
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let outputDate = date + " " + month;
+    let outputTime = hour + ":" + min;
+    console.log(outputTime);
+    if (displayTime == 0) {
+      if (
+        timeNow.getDate() == a.getDate() &&
+        timeNow.getMonth() == timeNow.getMonth()
+      ) {
+        return "Today";
+      } else {
+        return outputDate;
+      }
+    } else {
+      return outputTime;
+    }
   };
 
-  let newTime = dateTime(UnixTimeStamp);
+  let newTime = dateTime(UnixTimeStamp, displayTime);
+  console.log(newTime);
 
   return newTime;
 }
