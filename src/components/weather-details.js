@@ -37,7 +37,7 @@ function WeatherDetails(props) {
         <div className="weather-details-body">
           <WeatherDetailsModule
             itemName="FEELS LIKE"
-            item={ConvertKelvinToCelsius(weather.feels_like)}
+            item={ConvertKelvinToCelsius(weather.feels_like) + "\u00b0"}
           />
           <WeatherDetailsModule
             itemName="SUNRISE"
@@ -47,13 +47,19 @@ function WeatherDetails(props) {
             itemName="SUNSET"
             item={ConvertUnixTime(weather.sunset, 1)}
           />
-          <WeatherDetailsModule itemName="HUMIDITY" item={weather.humidity} />
+          <WeatherDetailsModule
+            itemName="HUMIDITY"
+            item={weather.humidity + "%"}
+          />
           <WeatherDetailsModule itemName="UVI" item={weather.uvi} />
           <WeatherDetailsModule
             itemName="WIND SPEED"
-            item={weather.wind_speed}
+            item={weather.wind_speed + " m/s"}
           />
-          <WeatherDetailsModule itemName="PRESSURE" item={weather.pressure} />
+          <WeatherDetailsModule
+            itemName="PRESSURE"
+            item={weather.pressure + " hPa"}
+          />
           <WeatherDetailsModule itemName="POLLUTION" item={pollution} />
         </div>
       </div>
