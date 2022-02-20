@@ -101,10 +101,11 @@
 }
 
 .weather-details-body {
-  margin-top: 3%;
+  margin-top: 2%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   grid-template-rows: 30% 30%;
+  row-gap: 2%;
   height: 100%;
 }
 
@@ -122,14 +123,14 @@
 }
 
 .weather-details-module-title {
-  margin-top: 13%;
+  margin-top: 15%;
   font-size: 120%;
   font-family: Arial;
 }
 
 .weather-details-module-content {
-  margin-top: 8%;
-  font-size: 170%;
+  margin-top: 9%;
+  font-size: 180%;
   font-weight: bold;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
