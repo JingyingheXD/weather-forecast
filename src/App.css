@@ -86,22 +86,30 @@
   margin-right: 2%;
 }
 
-.weather-details-header {
-  text-align: center;
-  font-size: 180%;
+.weather-details-date {
+  font-size: 250%;
   font-family: sans-serif;
   text-transform: capitalize;
+  justify-self: start;
+  align-self: center;
+}
+
+.weather-details-header {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 30%;
 }
 
 .weather-details-body {
+  margin-top: 3%;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 30% 30%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 30% 30%;
   height: 100%;
 }
 
 .weather-details-icon {
-  font-size: 500%;
+  font-size: 550%;
   justify-self: center;
   align-self: center;
 }
@@ -109,4 +117,11 @@
 .weather-details-main-info {
   justify-self: start;
   align-self: center;
+}
+
+.weather-details-module {
+  border-radius: 15px;
+  background-color: #1e2c52;
+  margin: 2%;
+  text-align: center;
 }

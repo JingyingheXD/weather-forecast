@@ -24,7 +24,6 @@ function App() {
           GetSelectedWeatherSummary(resp.daily[0], resp.current)
         );
       })
-      .then()
       .catch((error) => console.log(error));
   }, []);
 
