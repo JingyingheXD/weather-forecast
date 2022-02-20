@@ -1,4 +1,4 @@
-function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
+function GetSelectedWeatherSummary(selectedWeather, currentWeather, pollution) {
   if (selectedWeather && currentWeather) {
     const selectedIsToday = (selectedWeather, currentWeather) => {
       let select = new Date(selectedWeather.dt * 1000);
@@ -31,6 +31,7 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["uvi"] = currentWeather.uvi;
       displayWeather["wind_speed"] = currentWeather.wind_speed;
       displayWeather["pressure"] = currentWeather.pressure;
+      displayWeather["pollution"] = pollution;
     } else {
       displayWeather["dt"] = selectedWeather.dt;
       displayWeather["temp"] = selectedWeather.temp.day;
@@ -46,6 +47,7 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather) {
       displayWeather["uvi"] = selectedWeather.uvi;
       displayWeather["wind_speed"] = selectedWeather.wind_speed;
       displayWeather["pressure"] = selectedWeather.pressure;
+      displayWeather["pollution"] = "No data";
     }
 
     return displayWeather;

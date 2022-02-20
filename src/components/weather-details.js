@@ -8,21 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function WeatherDetails(props) {
   const weather = props.displayWeather;
-  const [pollution, setPollution] = useState(null);
 
-  useEffect(() => {
-    fetch(
-      "http://api.openweathermap.org/data/2.5/air_pollution?lat=-37&lon=145&appid=e1fb6136198f0c0a8cd978f199e1a78a",
-      { method: "GET" }
-    )
-      .then((resp) => resp.json())
-      .then((resp) => {
-        setPollution(resp.list[0].components.pm2_5);
-      })
-      .catch((error) => console.log(error));
-  });
-
-  if (weather && pollution) {
+  if (weather) {
     return (
       <div className="weather-details">
         <div className="weather-details-header">
@@ -60,7 +47,7 @@ function WeatherDetails(props) {
             itemName="PRESSURE"
             item={weather.pressure + " hPa"}
           />
-          <WeatherDetailsModule itemName="POLLUTION" item={pollution} />
+          <WeatherDetailsModule itemName="POLLUTION" item={weather.pollution} />
         </div>
       </div>
     );
