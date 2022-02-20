@@ -23,7 +23,6 @@ function ConvertUnixTime(UnixTimeStamp, displayTime) {
     let min = a.getMinutes();
     let outputDate = date + " " + month;
     let outputTime = hour + ":" + min;
-    console.log(outputTime);
     if (displayTime == 0) {
       if (
         timeNow.getDate() == a.getDate() &&
@@ -39,7 +38,6 @@ function ConvertUnixTime(UnixTimeStamp, displayTime) {
   };
 
   let newTime = dateTime(UnixTimeStamp, displayTime);
-  console.log(newTime);
 
   return newTime;
 }

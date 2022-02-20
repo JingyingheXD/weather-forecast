@@ -105,3 +105,8 @@
   justify-self: center;
   align-self: center;
 }
+
+.weather-details-main-info {
+  justify-self: start;
+  align-self: center;
+}

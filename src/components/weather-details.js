@@ -1,7 +1,7 @@
 import React from "react";
-import ConvertUnixTime from "../utils/convert-unix-time";
 import GetWeatherIcon from "../utils/get-weather-icon";
 import ConvertKelvinToCelsius from "../utils/convert-kelvin-to-celsius";
+import ConvertUnixTime from "../utils/convert-unix-time";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -12,7 +12,7 @@ function WeatherDetails(props) {
     return (
       <div className="weather-details">
         <header className="weather-details-header">
-          {ConvertUnixTime(weather.dt)}
+          {ConvertUnixTime(weather.dt, 0)}
         </header>
 
         <div className="weather-details-body">
@@ -20,10 +20,12 @@ function WeatherDetails(props) {
             className="weather-details-icon"
             icon={GetWeatherIcon(weather.weatherParameter)}
           />
-          <div>
-            <p>FEELS LIKE: {ConvertKelvinToCelsius(weather.feels_like)}&deg;</p>
-            <p>SUNRISE: {ConvertUnixTime(weather.sunrise)}</p>
-            <p>SUNSET: {ConvertUnixTime(weather.sunset)}</p>
+          <div className="weather-details-main-info">
+            FEELS LIKE: {ConvertKelvinToCelsius(weather.feels_like)}&deg;
+            <br />
+            SUNRISE: {ConvertUnixTime(weather.sunrise, 1)}
+            <br />
+            SUNSET: {ConvertUnixTime(weather.sunset, 1)}
           </div>
           <div>hello</div>
           <div>hello</div>

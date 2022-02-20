@@ -25,7 +25,7 @@ function Footer(props) {
                 className="footer-icons"
               />
               <p className="footer-dates">
-                {ConvertUnixTime(dailyWeather.dt)}{" "}
+                {ConvertUnixTime(dailyWeather.dt, 0)}{" "}
               </p>
             </div>
           );
