@@ -114,14 +114,23 @@
   align-self: center;
 }
 
-.weather-details-main-info {
-  justify-self: start;
-  align-self: center;
-}
-
 .weather-details-module {
   border-radius: 15px;
   background-color: #1e2c52;
   margin: 2%;
   text-align: center;
+}
+
+.weather-details-module-title {
+  margin-top: 13%;
+  font-size: 120%;
+  font-family: Arial;
+}
+
+.weather-details-module-content {
+  margin-top: 8%;
+  font-size: 170%;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
