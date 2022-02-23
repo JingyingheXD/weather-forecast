@@ -47,7 +47,7 @@ function WeatherDetails(props) {
             itemName="PRESSURE"
             item={weather.pressure + " hPa"}
           />
-          <WeatherDetailsModule itemName="POLLUTION" item={weather.pollution} />
+          <WeatherDetailsModule itemName="PM2.5" item={weather.pollution} />
         </div>
       </div>
     );
