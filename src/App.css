@@ -38,7 +38,7 @@
 }
 
 .footer-icons {
-  font-size: 3rem;
+  font-size: 350%;
   margin-top: 16%;
   margin-bottom: 5%;
   cursor: pointer;
@@ -46,10 +46,11 @@
 
 .footer-dates {
   font-family: sans-serif;
-  font-size: 1.2rem;
-  margin-top: 10%;
+  font-size: 140%;
+  margin-top: 5%;
   margin-bottom: 3%;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .weather-sum {
@@ -103,6 +104,7 @@
   display: grid;
   grid-template-columns: 50% 50%;
   height: 30%;
+  font-weight: bold;
 }
 
 .weather-details-body {
@@ -130,7 +132,7 @@
 
 .weather-details-module-title {
   margin-top: 15%;
-  font-size: 120%;
+  font-size: 140%;
   font-family: Arial;
 }
 
