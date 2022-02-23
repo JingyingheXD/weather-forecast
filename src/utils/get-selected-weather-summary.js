@@ -31,7 +31,11 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather, pollution) {
       displayWeather["uvi"] = currentWeather.uvi;
       displayWeather["wind_speed"] = currentWeather.wind_speed;
       displayWeather["pressure"] = currentWeather.pressure;
-      displayWeather["pollution"] = pollution;
+      if (pollution == null) {
+        displayWeather["pollution"] = "Null";
+      } else {
+        displayWeather["pollution"] = pollution;
+      }
     } else {
       displayWeather["dt"] = selectedWeather.dt;
       displayWeather["temp"] = selectedWeather.temp.day;

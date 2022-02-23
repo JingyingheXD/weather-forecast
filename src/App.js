@@ -7,32 +7,72 @@ import WeatherDetails from "./components/weather-details";
 import Footer from "./components/footer";
 
 function App() {
+  const [pageStatus, setPageStatus] = useState("loading");
   const [dailyWeathers, setDailyWeathers] = useState([]);
   const [currentWeather, setCurrentWeather] = useState(null);
   const [displayWeather, setDisplayWeather] = useState(null);
   const [pollution, setPollution] = useState(null);
+
+  const response = (res) => {
+    const errors = [401, 404, 429, 500, 502, 503, 504];
+    if (errors.indexOf(res.status) == -1) {
+      return res.json();
+    } else {
+      throw new Error("error");
+    }
+  };
 
   useEffect(() => {
     Promise.all([
       fetch(
         "http://api.openweathermap.org/data/2.5/air_pollution?lat=-37&lon=145&appid=e1fb6136198f0c0a8cd978f199e1a78a",
         { method: "GET" }
-      ).then((res) => res.json()),
+      )
+        .then((res) => {
+          const resp = response(res);
+          return resp;
+        })
+        .catch((err) => {
+          return undefined;
+        }),
       fetch(
         "https://api.openweathermap.org/data/2.5/onecall?lat=-37&lon=145&appid=e1fb6136198f0c0a8cd978f199e1a78a",
         { method: "GET" }
-      ).then((res) => res.json()),
+      )
+        .then((res) => {
+          const resp = response(res);
+          return resp;
+        })
+        .catch(() => {
+          return undefined;
+        }),
     ])
       .then(([resp1, resp2]) => {
-        setPollution(resp1.list[0].components.pm2_5);
-        setDailyWeathers(resp2.daily);
-        setCurrentWeather(resp2.current);
+        let pollution;
+        let dailyWeathers;
+        let currentWeather;
+
+        // If pollution API crashes, the website can still runs.
+        // If weather API crashes, the web app pageStatus will be 'error', and show error page.
+        if (resp1 == undefined) {
+          pollution = null;
+        } else {
+          pollution = resp1.list[0].components.pm2_5;
+        }
+        if (resp2 == undefined) {
+          setPageStatus("error");
+          return null;
+        } else {
+          dailyWeathers = resp2.daily;
+          currentWeather = resp2.current;
+        }
+
+        setPageStatus("loaded");
+        setPollution(pollution);
+        setDailyWeathers(dailyWeathers);
+        setCurrentWeather(currentWeather);
         setDisplayWeather(
-          GetSelectedWeatherSummary(
-            resp2.daily[0],
-            resp2.current,
-            resp1.list[0].components.pm2_5
-          )
+          GetSelectedWeatherSummary(dailyWeathers[0], currentWeather, pollution)
         );
       })
       .catch((error) => console.log(error));
@@ -47,18 +87,33 @@ function App() {
     setDisplayWeather(summary);
   };
 
-  return (
-    <div className="App">
-      <div className="body">
-        <WeatherSummary displayWeather={displayWeather} />
-        <WeatherDetails displayWeather={displayWeather} />
+  if (pageStatus == "error") {
+    return (
+      <div className="App">
+        <div className="body">There are some errors.</div>
       </div>
-      <Footer
-        dailyWeatherClicked={dailyWeatherClicked}
-        dailyWeathers={dailyWeathers.slice(0, -1)}
-      />
-    </div>
-  );
+    );
+  } else if (pageStatus == "loading") {
+    return (
+      <div className="App">
+        <div className="body">The website is loading......</div>
+        <Footer></Footer>
+      </div>
+    );
+  } else if (pageStatus == "loaded") {
+    return (
+      <div className="App">
+        <div className="body">
+          <WeatherSummary displayWeather={displayWeather} />
+          <WeatherDetails displayWeather={displayWeather} />
+        </div>
+        <Footer
+          dailyWeatherClicked={dailyWeatherClicked}
+          dailyWeathers={dailyWeathers.slice(0, -1)}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
