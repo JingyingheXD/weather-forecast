@@ -21,6 +21,9 @@ function ConvertUnixTime(UnixTimeStamp, displayTime) {
     let date = a.getDate();
     let hour = a.getHours();
     let min = a.getMinutes();
+    if (hour < 10){
+      
+    }
     let outputDate = date + " " + month;
     let outputTime = hour + ":" + min;
     if (displayTime == 0) {
