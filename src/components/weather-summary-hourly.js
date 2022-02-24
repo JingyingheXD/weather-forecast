@@ -14,8 +14,6 @@ function WeatherHourly(props) {
     };
   });
 
-  console.log(data);
-
   return (
     <div className="mx-auto weather-sum-hourly">
       <LineChart
