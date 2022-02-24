@@ -13,6 +13,8 @@ function App() {
   const [displayWeather, setDisplayWeather] = useState(null);
   const [pollution, setPollution] = useState(null);
 
+  let keyid = "e1fb6136198f0c0a8cd978f199e1a78a";
+
   const response = (res) => {
     const errors = [401, 404, 429, 500, 502, 503, 504];
     if (errors.indexOf(res.status) == -1) {
@@ -25,7 +27,7 @@ function App() {
   useEffect(() => {
     Promise.all([
       fetch(
-        "http://api.openweathermap.org/data/2.5/air_pollution?lat=-37&lon=145&appid=e1fb6136198f0c0a8cd978f199e1a78a",
+        `http://api.openweathermap.org/data/2.5/air_pollution?lat=-37&lon=145&appid=${keyid}`,
         { method: "GET" }
       )
         .then((res) => {
@@ -36,7 +38,7 @@ function App() {
           return undefined;
         }),
       fetch(
-        "https://api.openweathermap.org/data/2.5/onecall?lat=-37&lon=145&appid=e1fb6136198f0c0a8cd978f199e1a78a",
+        `https://api.openweathermap.org/data/2.5/onecall?lat=-37&lon=145&appid=${keyid}`,
         { method: "GET" }
       )
         .then((res) => {
@@ -90,13 +92,13 @@ function App() {
   if (pageStatus == "error") {
     return (
       <div className="App">
-        <div className="body">There are some errors.</div>
+        <div className="body"> There are some errors.</div>
       </div>
     );
   } else if (pageStatus == "loading") {
     return (
       <div className="App">
-        <div className="body">The website is loading......</div>
+        <div className="body"> The website is loading......</div>
         <Footer></Footer>
       </div>
     );
