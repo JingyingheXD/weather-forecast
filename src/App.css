@@ -88,12 +88,11 @@
 }
 
 .weather-sum-hourly {
-  margin-left: 3%;
-  margin-right: 3%;
-  margin-top: 2%;
   width: 90%;
-  height: 18%;
+  height: 20%;
   overflow: scroll;
+  align-items: center;
+  background-color: grey;
 }
 
 .weather-details {

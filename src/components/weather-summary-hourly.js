@@ -17,9 +17,9 @@ function WeatherHourly(props) {
   console.log(data);
 
   return (
-    <div className="weather-sum-hourly">
+    <div className="mx-auto weather-sum-hourly">
       <LineChart
-        width={480}
+        width={750}
         height={120}
         data={data}
         margin={{ left: 10, right: 10, top: 8 }}
