@@ -39,7 +39,7 @@ function App() {
           return undefined;
         }),
       fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=-37&lon=145&appid=${keyid}`,
+        `http://api.openweathermap.org/data/2.5/onecall?lat=-37&lon=145&appid=${keyid}`,
         { method: "GET" }
       )
         .then((res) => {
