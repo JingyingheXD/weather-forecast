@@ -27,7 +27,7 @@ function ConvertUnixTime(UnixTimeStamp, displayTime) {
     let outputTime = a.format("HH:mm");
 
     if (displayTime == 0) {
-      if (timeNow.date() == date && timeNow.month == month) {
+      if (timeNow.date() == date && timeNow.month() == month) {
         return "Today";
       } else {
         return outputDate;

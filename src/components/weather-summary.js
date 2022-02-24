@@ -6,8 +6,6 @@ function WeatherSummary(props) {
   let weather = props.displayWeather;
   let hourlyWeathers = props.hourlyWeathers;
 
-  console.log(hourlyWeathers);
-
   const [showHourly, setShowHourly] = useState(false);
 
   if (weather && hourlyWeathers) {

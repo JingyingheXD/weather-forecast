@@ -87,6 +87,14 @@
   margin-top: 2%;
 }
 
+.weather-sum-hourly {
+  display: grid;
+  grid-template-columns: 20% 10% 10% 10% 10% 10% 10%;
+  background-color: grey;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
 .weather-details {
   margin-left: 2%;
   margin-right: 2%;
