@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     Promise.all([
       fetch(
-        `http://api.openweathermap.org/data/2.5/air_pollution?lat=-37&lon=145&appid=${keyid}`,
+        `https://api.openweathermap.org/data/2.5/air_pollution?lat=-37&lon=145&appid=${keyid}`,
         { method: "GET" }
       )
         .then((res) => {
