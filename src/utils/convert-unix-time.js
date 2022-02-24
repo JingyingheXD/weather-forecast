@@ -22,8 +22,6 @@ function ConvertUnixTime(UnixTimeStamp, displayTime) {
 
     let month = a.month();
     let date = a.date();
-    let hour = a.hour();
-    let minute = a.minute();
 
     let outputDate = date + " " + months[month];
     let outputTime = a.format("HH:mm");
