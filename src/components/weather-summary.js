@@ -26,11 +26,10 @@ function WeatherSummary(props) {
                 className="btn btn-secondary mx-auto"
                 onClick={(evt) => setShowHourly(!showHourly)}
               >
-                {console.log(showHourly)}
                 Hourly tempreture
               </button>
               <br />
-              <WeatherHourly className="mx-auto" />
+              {showHourly ? <WeatherHourly className="mx-auto" /> : null}
             </div>
           </div>
         ) : null}
