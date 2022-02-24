@@ -29,9 +29,9 @@ function WeatherSummary(props) {
               >
                 Hourly tempreture
               </button>
-              <br />
+              <br></br>
               {showHourly ? (
-                <WeatherHourly hourlyWeathers={hourlyWeathers.slice(0, 7)} />
+                <WeatherHourly hourlyWeathers={hourlyWeathers.slice(0, 11)} />
               ) : null}
             </div>
           </div>
