@@ -1,8 +1,11 @@
-import React from "react";
+import { React, useState } from "react";
 import ConvertKelvinToCelsius from "../utils/convert-kelvin-to-celsius";
+import WeatherHourly from "./weather-summary-hourly";
 
 function WeatherSummary(props) {
   const weather = props.displayWeather;
+
+  const [showHourly, setShowHourly] = useState(false);
 
   if (weather) {
     return (
@@ -17,10 +20,17 @@ function WeatherSummary(props) {
         </div>
         {weather.current ? (
           <div className="weather-sum-button">
-            <div className="d-flex justify-content-center">
-              <button type="button" className="btn btn-secondary">
+            <div className="d-flex flex-column justify-content-center">
+              <button
+                type="button"
+                className="btn btn-secondary mx-auto"
+                onClick={(evt) => setShowHourly(!showHourly)}
+              >
+                {console.log(showHourly)}
                 Hourly tempreture
               </button>
+              <br />
+              <WeatherHourly className="mx-auto" />
             </div>
           </div>
         ) : null}
