@@ -1,11 +1,13 @@
+import dayjs from "dayjs";
+
 function GetSelectedWeatherSummary(selectedWeather, currentWeather, pollution) {
   if (selectedWeather && currentWeather) {
     const selectedIsToday = (selectedWeather, currentWeather) => {
-      let select = new Date(selectedWeather.dt * 1000);
-      let current = new Date(currentWeather.dt * 1000);
+      let select = dayjs.unix(selectedWeather.dt);
+      let current = dayjs.unix(currentWeather.dt);
       if (
-        select.getDate() == current.getDate() &&
-        select.getMonth() == current.getMonth()
+        select.date() == current.date() &&
+        select.month() == current.month()
       ) {
         return 1;
       } else {
