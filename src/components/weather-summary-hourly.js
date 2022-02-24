@@ -17,17 +17,19 @@ function WeatherHourly(props) {
   console.log(data);
 
   return (
-    <LineChart
-      width={470}
-      height={120}
-      data={data}
-      margin={{ right: 2, left: 12 }}
-    >
-      <Line type="monotone" dataKey="temp" stroke="#476072">
-        <LabelList dataKey="temp" position="bottom" stroke="#476072" />
-      </Line>
-      <XAxis dataKey="time" type="category" stroke="#476072" />
-    </LineChart>
+    <div className="weather-sum-hourly">
+      <LineChart
+        width={480}
+        height={120}
+        data={data}
+        margin={{ left: 10, right: 10, top: 8 }}
+      >
+        <Line type="monotone" dataKey="temp" stroke="#556052">
+          <LabelList dataKey="temp" position="bottom" stroke="#556052" />
+        </Line>
+        <XAxis dataKey="time" type="category" stroke="#556052" />
+      </LineChart>
+    </div>
   );
 }
 
