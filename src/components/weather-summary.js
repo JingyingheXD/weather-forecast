@@ -3,11 +3,14 @@ import ConvertKelvinToCelsius from "../utils/convert-kelvin-to-celsius";
 import WeatherHourly from "./weather-summary-hourly";
 
 function WeatherSummary(props) {
-  const weather = props.displayWeather;
+  let weather = props.displayWeather;
+  let hourlyWeathers = props.hourlyWeathers;
+
+  console.log(hourlyWeathers);
 
   const [showHourly, setShowHourly] = useState(false);
 
-  if (weather) {
+  if (weather && hourlyWeathers) {
     return (
       <div className="weather-sum">
         <div className="weather-sum-degree">
@@ -29,7 +32,9 @@ function WeatherSummary(props) {
                 Hourly tempreture
               </button>
               <br />
-              {showHourly ? <WeatherHourly className="mx-auto" /> : null}
+              {showHourly ? (
+                <WeatherHourly hourlyWeathers={hourlyWeathers.slice(0, 7)} />
+              ) : null}
             </div>
           </div>
         ) : null}

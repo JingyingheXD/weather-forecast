@@ -12,6 +12,7 @@ function App() {
   const [currentWeather, setCurrentWeather] = useState(null);
   const [displayWeather, setDisplayWeather] = useState(null);
   const [pollution, setPollution] = useState(null);
+  const [hourlyWeathers, setHourlyWeathers] = useState([]);
 
   let keyid = "e1fb6136198f0c0a8cd978f199e1a78a";
 
@@ -67,6 +68,7 @@ function App() {
         } else {
           dailyWeathers = resp2.daily;
           currentWeather = resp2.current;
+          setHourlyWeathers(resp2.hourly);
         }
 
         setPageStatus("loaded");
@@ -106,7 +108,10 @@ function App() {
     return (
       <div className="App">
         <div className="body">
-          <WeatherSummary displayWeather={displayWeather} />
+          <WeatherSummary
+            displayWeather={displayWeather}
+            hourlyWeathers={hourlyWeathers}
+          />
           <WeatherDetails displayWeather={displayWeather} />
         </div>
         <Footer

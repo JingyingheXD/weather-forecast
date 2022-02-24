@@ -1,7 +1,15 @@
 import React from "react";
 
 function WeatherHourly(props) {
-  return <div>hourly</div>;
+  let hours = props.hourlyWeathers;
+
+  return (
+    <div>
+      {hours.map((hour) => {
+        return <div>{hour.dt}</div>;
+      })}
+    </div>
+  );
 }
 
 export default WeatherHourly;
