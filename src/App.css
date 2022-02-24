@@ -60,7 +60,7 @@
 }
 
 .weather-sum-degree {
-  margin-top: 10%;
+  margin-top: 12%;
   text-align: center;
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
@@ -84,7 +84,7 @@
 }
 
 .weather-sum-button {
-  margin-top: 2%;
+  margin-top: 3%;
 }
 
 .weather-sum-hourly {
@@ -92,7 +92,8 @@
   height: 20%;
   overflow: scroll;
   align-items: center;
-  background-color: grey;
+  background-color: #e6ddc6;
+  border-radius: 10px;
 }
 
 .weather-details {
