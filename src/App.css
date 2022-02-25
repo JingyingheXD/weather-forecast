@@ -443,8 +443,7 @@
 @media only screen and (max-width: 768px) {
   .App {
     display: grid;
-    /* grid-template-rows: 110vh 14vh; */
-    grid-row: auto auto;
+    grid-row: 83% 17%;
     min-height: 100vh;
     min-width: 100vw;
     background-color: #f9f3df;
@@ -453,16 +452,17 @@
   }
 
   .body {
-    position: static;
-    height: 125vh;
     padding-top: 5%;
     background-color: #f9f3df;
   }
 
   .footer {
-    position: static;
+    position: relative;
+    max-height: 100px;
+    bottom: 0;
     left: 2px;
     right: 2px;
+    margin-top: 3%;
     border-radius: 10px;
     background-color: #99a799;
     display: grid;
@@ -489,7 +489,6 @@
 
   .weather-sum {
     position: static;
-    height: 55vh;
   }
 
   .weather-sum-degree {
@@ -520,7 +519,7 @@
 
   .weather-sum-hourly {
     width: 95vw;
-    height: 15vh;
+    height: 17%;
     overflow: scroll;
     background-color: #e6ddc6;
     border-radius: 10px;
@@ -529,6 +528,7 @@
   .weather-details {
     margin-left: 2%;
     margin-right: 2%;
+    /* height: 100vh; */
   }
 
   .weather-details-header {
@@ -553,12 +553,15 @@
   }
 
   .weather-details-body {
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 2%;
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: 40% 40% 40% 40%;
+    grid-template-rows: 23.5% 23.5% 23.5% 23.5%;
+    /* grid-template-rows: auto auto auto auto; */
     row-gap: 2%;
-    column-gap: 2%;
+    column-gap: 3%;
     height: 100%;
   }
 
