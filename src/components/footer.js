@@ -25,7 +25,7 @@ function Footer(props) {
                 icon={GetWeatherIcon(dailyWeather.weather[0].main)}
                 className="mx-auto my-auto footer-icons"
               />
-              <p className="mx-auto footer-dates">
+              <p className="mx-auto mt footer-dates">
                 {ConvertUnixTime(dailyWeather.dt, 0)}
               </p>
             </div>
