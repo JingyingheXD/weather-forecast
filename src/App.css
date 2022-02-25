@@ -19,7 +19,7 @@
 
 .footer {
   position: relative;
-  bottom: 0;
+
   left: 2px;
   right: 2px;
   border-radius: 10px;
@@ -133,7 +133,6 @@
 .weather-details-module-title {
   font-size: max(3vmin, 20px);
   font-family: Arial;
-  /* text-align: center; */
 }
 
 .weather-details-module-content {
