@@ -27,6 +27,10 @@ function WeatherDetails(props) {
             item={ConvertKelvinToCelsius(weather.feels_like) + "\u00b0"}
           />
           <WeatherDetailsModule
+            itemName="HUMIDITY"
+            item={weather.humidity + "%"}
+          />
+          <WeatherDetailsModule
             itemName="SUNRISE"
             item={ConvertUnixTime(weather.sunrise, 1)}
           />
@@ -34,10 +38,7 @@ function WeatherDetails(props) {
             itemName="SUNSET"
             item={ConvertUnixTime(weather.sunset, 1)}
           />
-          <WeatherDetailsModule
-            itemName="HUMIDITY"
-            item={weather.humidity + "%"}
-          />
+
           <WeatherDetailsModule itemName="UVI" item={weather.uvi} />
           <WeatherDetailsModule
             itemName="WIND SPEED"

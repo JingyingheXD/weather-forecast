@@ -1,7 +1,13 @@
 import React from "react";
 import dayjs from "dayjs";
 import ConvertKelvinToCelsius from "../utils/convert-kelvin-to-celsius";
-import { LineChart, Line, XAxis, LabelList } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  LabelList,
+  ResponsiveContainer,
+} from "recharts";
 
 function WeatherHourly(props) {
   let hours = props.hourlyWeathers;
