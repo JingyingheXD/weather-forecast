@@ -145,11 +145,12 @@
 @media only screen and (min-width: 1024px) {
   .App {
     display: grid;
-    grid-template-rows: 83% 17%;
+    grid-template-rows: auto auto;
     min-height: 100vh;
     min-width: 100vw;
     background-color: #f9f3df;
     color: rgb(80, 77, 77);
+    overflow: scroll;
   }
 
   .body {
@@ -163,8 +164,8 @@
   }
 
   .footer {
-    position: relative;
-
+    position: fixed;
+    bottom: 0;
     left: 2px;
     right: 2px;
     border-radius: 10px;
@@ -196,7 +197,7 @@
   }
 
   .weather-sum-degree {
-    margin-top: 12%;
+    margin-top: 13%;
     text-align: center;
     font-weight: bold;
     font-family: "Courier New", Courier, monospace;
@@ -207,7 +208,6 @@
   .weather-sum-description {
     text-align: center;
     font-size: max(3.8vmin, 20px);
-    margin-top: 1%;
     font-family: sans-serif;
     text-transform: capitalize;
   }
@@ -225,7 +225,7 @@
 
   .weather-sum-hourly {
     width: 80%;
-    height: 20%;
+    height: 18%;
     overflow: scroll;
     align-items: center;
     background-color: #e6ddc6;
@@ -278,6 +278,7 @@
   .weather-details-module-title {
     font-size: max(3vmin, 18px);
     font-family: Arial;
+    text-align: center;
   }
 
   .weather-details-module-content {
@@ -285,10 +286,11 @@
     font-weight: bold;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
+    text-align: center;
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .App {
     display: grid;
     grid-template-rows: 83% 17%;
@@ -310,7 +312,6 @@
 
   .footer {
     position: relative;
-
     left: 2px;
     right: 2px;
     border-radius: 10px;
@@ -532,7 +533,6 @@
     grid-template-columns: 50% 50%;
     height: 30%;
     font-weight: bold;
-    /* margin-bottom: 5%; */
   }
 
   .weather-details-icon {
@@ -578,5 +578,6 @@
     font-weight: bold;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
+    text-align: center;
   }
 }
