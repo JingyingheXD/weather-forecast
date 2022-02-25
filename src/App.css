@@ -198,11 +198,11 @@
 
   .weather-sum-degree {
     margin-top: 13%;
+    margin-left: 10%;
     text-align: center;
     font-weight: bold;
     font-family: "Courier New", Courier, monospace;
     font-size: max(12vmin, 80px);
-    margin-left: 10%;
   }
 
   .weather-sum-description {
@@ -298,6 +298,7 @@
     min-width: 100vw;
     background-color: #f9f3df;
     color: rgb(80, 77, 77);
+    overflow: scroll;
   }
 
   .body {
@@ -311,7 +312,8 @@
   }
 
   .footer {
-    position: relative;
+    position: fixed;
+    bottom: 0;
     left: 2px;
     right: 2px;
     border-radius: 10px;
@@ -339,12 +341,12 @@
   }
 
   .weather-sum {
-    padding-top: 10%;
+    padding-top: 5%;
     border-right: 0.9px solid rgb(99, 97, 97);
   }
 
   .weather-sum-degree {
-    margin-top: 15%;
+    margin-top: 10%;
     margin-left: 10%;
     text-align: center;
     font-weight: bold;
@@ -434,6 +436,7 @@
     font-weight: bold;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
       "Lucida Sans", Arial, sans-serif;
+    text-align: center;
   }
 }
 
