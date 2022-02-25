@@ -17,14 +17,15 @@ function Footer(props) {
         dailyWeathers.map((dailyWeather) => {
           return (
             <div
+              className="footer-day"
               key={dailyWeather.dt}
               onClick={(evt) => dailyWeatherClicked(dailyWeather)}
             >
               <FontAwesomeIcon
                 icon={GetWeatherIcon(dailyWeather.weather[0].main)}
-                className="footer-icons"
+                className="mx-auto footer-icons"
               />
-              <p className="footer-dates">
+              <p className="mx-auto footer-dates">
                 {ConvertUnixTime(dailyWeather.dt, 0)}
               </p>
             </div>
