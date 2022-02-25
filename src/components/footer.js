@@ -23,7 +23,7 @@ function Footer(props) {
             >
               <FontAwesomeIcon
                 icon={GetWeatherIcon(dailyWeather.weather[0].main)}
-                className="mx-auto footer-icons"
+                className="mx-auto my-auto footer-icons"
               />
               <p className="mx-auto footer-dates">
                 {ConvertUnixTime(dailyWeather.dt, 0)}
