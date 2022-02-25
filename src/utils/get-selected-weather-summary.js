@@ -31,7 +31,7 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather, pollution) {
       displayWeather["sunset"] = currentWeather.sunset;
       displayWeather["humidity"] = currentWeather.humidity;
       displayWeather["uvi"] = currentWeather.uvi;
-      displayWeather["wind_speed"] = currentWeather.wind_speed;
+      displayWeather["wind_speed"] = currentWeather.wind_speed.toFixed(1);
       displayWeather["pressure"] = currentWeather.pressure;
       if (pollution == null) {
         displayWeather["pollution"] = "Null";
@@ -51,7 +51,7 @@ function GetSelectedWeatherSummary(selectedWeather, currentWeather, pollution) {
       displayWeather["sunset"] = selectedWeather.sunset;
       displayWeather["humidity"] = selectedWeather.humidity;
       displayWeather["uvi"] = selectedWeather.uvi;
-      displayWeather["wind_speed"] = selectedWeather.wind_speed;
+      displayWeather["wind_speed"] = selectedWeather.wind_speed.toFixed(1);
       displayWeather["pressure"] = selectedWeather.pressure;
       displayWeather["pollution"] = "/";
     }
