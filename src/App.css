@@ -442,8 +442,6 @@
 
 @media only screen and (max-width: 768px) {
   .App {
-    display: grid;
-    grid-row: 83% 17%;
     min-height: 100vh;
     min-width: 100vw;
     background-color: #f9f3df;
@@ -459,7 +457,7 @@
   .footer {
     position: relative;
     max-height: 100px;
-    bottom: 0;
+    bottom: 0px;
     left: 2px;
     right: 2px;
     margin-top: 3%;
@@ -488,7 +486,8 @@
   }
 
   .weather-sum {
-    position: static;
+    position: relative;
+    min-height: 50%;
   }
 
   .weather-sum-degree {
@@ -526,12 +525,14 @@
   }
 
   .weather-details {
+    /* position: relative; */
     margin-left: 2%;
     margin-right: 2%;
-    /* height: 100vh; */
+    /* min-height: 50%; */
   }
 
   .weather-details-header {
+    margin-top: 8%;
     display: grid;
     grid-template-columns: 50% 50%;
     height: 30%;
