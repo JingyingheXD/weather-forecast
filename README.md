@@ -7,7 +7,7 @@ The Weather Forecast website: [https://JingyingheXD.github.io/weather-forecast](
 ## 0. API Documentation
 This web application calls APIs from the OpenWeather website. It used 'One Call API' and 'Air Pollution API'.
 
-One Call API: [https://openweathermap.org/api/one-call-api](https://openweathermap.org/api/one-call-api)
+One Call API: [https://openweathermap.org/api/one-call-api](https://openweathermap.org/api/one-call-api)\
 Air Pollution API: [https://openweathermap.org/api/air-pollution](https://openweathermap.org/api/air-pollution)
 
 ## 1. `npm install`
