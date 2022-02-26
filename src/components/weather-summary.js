@@ -20,7 +20,7 @@ function WeatherSummary(props) {
           {ConvertKelvinToCelsius(weather.max)}&deg;
         </div>
         {weather.current ? (
-          <div className="d-flex flex-column justify-content-center weather-sum-button">
+          <div className="weather-sum-button">
             <button
               type="button"
               className="btn btn-secondary mx-auto"
@@ -28,7 +28,6 @@ function WeatherSummary(props) {
             >
               Hourly tempreture
             </button>
-            <br></br>
             {showHourly ? (
               <WeatherHourly hourlyWeathers={hourlyWeathers.slice(0, 17)} />
             ) : null}

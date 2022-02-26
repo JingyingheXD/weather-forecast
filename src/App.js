@@ -93,20 +93,20 @@ function App() {
 
   if (pageStatus == "error") {
     return (
-      <div className="App">
+      <div className="app">
         <div className="body"> There are some errors.</div>
       </div>
     );
   } else if (pageStatus == "loading") {
     return (
-      <div className="App">
+      <div className="app">
         <div className="body"> The website is loading......</div>
         <Footer></Footer>
       </div>
     );
   } else if (pageStatus == "loaded") {
     return (
-      <div className="App">
+      <div className="app">
         <div className="body">
           <WeatherSummary
             displayWeather={displayWeather}
