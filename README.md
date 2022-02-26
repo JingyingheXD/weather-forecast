@@ -1,7 +1,7 @@
 # Weather Forecast
 A front-end project (using React.js framework) to forecast daily weather. This system predicts Melbourne's weather by default. In addition, the weather summary in footer is the day weather. And the weather detail in 'Today' is a live information.
 
-This is the Weather Forecast website: [https://JingyingheXD.github.io/weather-forecast](https://JingyingheXD.github.io/weather-forecast).
+The Weather Forecast website: [https://JingyingheXD.github.io/weather-forecast](https://JingyingheXD.github.io/weather-forecast).
 
 # Launch Project
 ## 0. API Documentation
